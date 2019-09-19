@@ -19,14 +19,14 @@ router.get("/register", function(req, res){
 
 //handle sign up logic
 router.post("/register", function(req, res){
-    var newUser = new User({username: req.body.username});
+    var newUser = new User({username: req.body.username.toLowerCase()});
     if(req.body.adminCode === process.env.ADMIN_CODE) {
       newUser.isAdmin = true;
     }
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             console.log(err);
-            return res.render("register", {error: err.message});
+            return res.render("register", {page: 'register', error: err.message});
         }
         passport.authenticate("local")(req, res, function(){
            req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
@@ -41,7 +41,7 @@ router.get("/login", function(req, res){
 });
 
 //handling login logic
-router.post("/login", passport.authenticate("local",
+router.post("/login", usernameToLowerCase, passport.authenticate("local",
     {
         successRedirect: "/search",
         failureRedirect: "/login",
@@ -57,5 +57,9 @@ router.get("/logout", function(req, res){
    res.redirect("/tweethome");
 });
 
+function usernameToLowerCase(req, res, next){
+    req.body.username = req.body.username.toLowerCase();
+    next();
+}
 
 module.exports = router;

@@ -26,7 +26,7 @@ mongoose.Promise = global.Promise;
 
 const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/tweetsent';
 
-mongoose.connect(databaseUri, { useMongoClient: true })
+mongoose.connect(databaseUri, { useNewUrlParser: true, useUnifiedTopology: true })
       .then(() => console.log(`Database connected to `+ process.env.MONGODB_URI))
       .catch(err => console.log(`Database connection error: ${err.message}`));
 

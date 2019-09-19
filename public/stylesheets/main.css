@@ -47,11 +47,6 @@ hr.style14 {
 }
 
 
-/* Campground show page delete button */
-.delete-form {
-	display: inline-block;
-}
-
 /* Flexbox grid fix */
 .flex-wrap {
   display:flex;
@@ -62,7 +57,7 @@ hr.style14 {
   color: green;
 }
 
-.fa-thumbs-down{page-footer
+.fa-thumbs-down{
   color: red;
   margin-left: 20px;
 }
@@ -196,15 +191,10 @@ card-signin {
   color: #777;
 }
 
-.btn-google {
-  color: white;
-  background-color: #ea4335;
+#box1, #box2, #box3{
+	display: none;
 }
 
-.btn-facebook {
-  color: white;
-  background-color: #3b5998;
-}
 .fa-search:hover{
   color: red;
 }

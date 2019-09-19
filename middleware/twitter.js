@@ -4,7 +4,7 @@ var express     = require("express"),
     encodeUrl = require('encodeurl'),
     sentiment = require('sentiment-multilang');
 
-require('dotenv').load();
+//require('dotenv').load();
 
 var Twitter = require('twit');
 

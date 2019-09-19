@@ -6,7 +6,7 @@ var stopwords = ["a","","https","http","abbastanza","abbia","abbiamo","abbiano",
 
 //event listner for search argument
 $("#button-addon3").on("click", function(){
-
+	$('.alert').remove();
     //progress barr
     $('.progress').remove();
     $('#progressbar').append(' <div class="progress" > <div id="bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div></div>')
@@ -17,16 +17,20 @@ $("#button-addon3").on("click", function(){
         //callback from ajax call
         $('#bar').attr("style", "width:40%")
         chartPrint(data);
+		$('#box1').css({'display':'block'});
         $('#bar').attr("style", "width:60%")
         wordTweet(data);
+		$('#box2').css({'display':'block'});
         $('#bar').attr("style", "width:80%")
         hashtagTweet(data);
+		$('#box3').css({'display':'block'});
         $('#bar').attr("style", "width:100%")
+		$('.progress').delay(4000).css({'display':'none'});
   });
 });
 
 $("#formsearch").submit(function(event){
-
+	$('.alert').remove();
     //progress barr
     $('.progress').remove();
     $('#progressbar').append(' <div class="progress" > <div id="bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div></div>')
@@ -37,11 +41,15 @@ $("#formsearch").submit(function(event){
         //callback from ajax call
         $('#bar').attr("style", "width:40%")
         chartPrint(data);
+		$('#box1').css({'display':'block'});
         $('#bar').attr("style", "width:60%")
         wordTweet(data);
-        $('#bar').attr("style", "width:80%")
+		$('#box2').css({'display':'block'});
+        $('#bar').attr("style", "width:80%");
         hashtagTweet(data);
+		$('#box3').css({'display':'block'});
         $('#bar').attr("style", "width:100%")
+		$('.progress').delay(4000).css({'display':'none'});
 
     });
     event.preventDefault();
