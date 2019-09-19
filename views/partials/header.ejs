@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Tweet Sent</title>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <!-- fontawesome script -->
+      <script src="https://kit.fontawesome.com/ea5c9215ae.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+      <!-- highcharts script files -->
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+      <script src="https://code.highcharts.com/modules/exporting.js"></script>
+      <script src="https://code.highcharts.com/modules/export-data.js"></script>
+      <script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+      <!-- styesheetlocal -->
+      <link rel="stylesheet" href="/jcloud/jqcloud.min.css">
+      <link rel="stylesheet" href="/stylesheets/main.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <i class="fab fa-twitter fa-lg"></i> <a class="navbar-brand" href="/tweethome">TweetSent</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <% if(!currentUser){ %>
+              <li class=" <%= page === 'tweethome' ? 'active' : '' %> nav-item"><a class="nav-link" href="/tweethome">Home</a></li>
+              <% } else { %>
+                <li class=" <%= page === 'tweethome' ? 'active' : '' %> nav-item"><a class="nav-link" href="/tweethome">Home</a></li>
+                <li class=" <%= page === 'search' ? 'active' : '' %> nav-item"><a class="nav-link" href="/search">Search</a></li>
+              <% } %>
+            </ul>
+              <ul class="navbar-nav my-2 my-lg-0">
+                <% if(!currentUser){ %>
+                    <li class="nav-item mr-sm-2 <%= page === 'login' ? 'active' : '' %>"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item my-2 my-sm-0  <%= page === 'register' ? 'active' : '' %>"><a class="nav-link" href="/register">Sign Up</a></li>
+                <% } else { %>
+                    <li class="nav-item active mr-sm-2"><a class="nav-link" href="#">Signed In As <%= currentUser.username %></a></li>
+                    <li class="nav-item my-2 my-sm-0"><a class="nav-link" href="/logout">Logout</a></li>
+                <% } %>
+              </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <% if (error && error.length > 0) {%>
+          <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+      <% } %>
+      <% if (success && success.length > 0) {%>
+        <div class="alert alert-success" role="alert">
+          <%= success %>
+        </div>
+      <% } %>
+      </div>
