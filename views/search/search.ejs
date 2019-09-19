@@ -2,33 +2,27 @@
 
 <div class="container mt-5">
   <div class="row">
-    <div class="col-sm">
-    </div>
+    <div class="col-sm"></div>
     <div class="col-lg-8">
         <form id="formsearch">
            <div class="input-group mb-4 border rounded-pill p-1" >
-               <input id="inputsearch" type="search" placeholder="Tweet Argument" aria-describedby="button-addon1" class="form-control bg-none border-0">
+               <input id="inputsearch" type="search" placeholder="Tweet Argument" aria-describedby="button-addon3" class="form-control bg-none border-0">
                <div class="input-group-append border-0">
                  <button id="button-addon3" type="button" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
                </div>
             </div>
-       </form>
+       	</form>
     </div>
-    <div class="col-sm">
-    </div>
+    <div class="col-sm"></div>
   </div>
 </div>
 
 <!-- progress bar -->
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-    </div>
-    <div class="col-lg-8" id="progressbar">
-
-    </div>
-    <div class="col-sm">
-    </div>
+    <div class="col-sm"></div>
+    <div class="col-lg-8" id="progressbar"></div>
+    <div class="col-sm"></div>
   </div>
 </div>
 
@@ -38,14 +32,15 @@
 <div class="container" id="box1">
   <div class="row my-2">
     <div class="col-sm"></div>
-    <div class="col-lg-12">
-      <div class="card my-2">
-        <div class="card-header" >Sentiment</div>
-        <div class="card-body my-2"">
-            <div id="charts" style="height: 400px"></div>
-        </div>
-      </div>
-    </div>
+		<div class="col-lg-12">
+		  <div class="card my-2">
+				<div class="card-header" >Sentiment</div>
+					<div class="card-body my-2">
+						<div id="charts" style="height: 400px"></div>
+					</div>
+				</div>
+			</div>
+		</div>
     <div class="col-sm"></div>
   </div>
 </div>
@@ -55,25 +50,27 @@
 <div class="container" id="box2">
   <div class="row my-2">
     <div class="col-sm"></div>
-    <div class="col-lg-12" >
-        <div class="card my-2">
-          <div class="card-header">Word Tweet</div>
-          <div class="card-body my-2" id="worldtweet"></div>
-        </div>
-    </div>
+		<div class="col-lg-12" >
+			<div class="card my-2">
+			  <div class="card-header">Word Tweet</div>
+			  <div class="card-body my-2" id="worldtweet"></div>
+			</div>
+		</div>
     <div class="col-sm"></div>
   </div>
-					   
-  <div class="row my-2" id="box3">
-    <div class="col-sm"></div>
-    <div class="col-lg-12">
-      <div class="card my-2">
-        <div class="card-header">HashtagTweet</div>
-        <div class="card-body my-2" id="hashtagtweet"></div>
-      </div>
-    </div>
-    <div class="col-sm"></div>
-	</div>
+</div>
 
+<!-- hashtag tweet world cloud -->
+<div class="container" id="box3">
+  <div class="row my-2">
+		<div class="col-sm"></div>
+			<div class="col-lg-12">
+			  <div class="card my-2">
+				<div class="card-header">HashtagTweet</div>
+				<div class="card-body my-2" id="hashtagtweet"></div>
+			 </div>
+			<div class="col-sm"></div>
+   </div>
+</div>
 
 <% include ../partials/footer %>
